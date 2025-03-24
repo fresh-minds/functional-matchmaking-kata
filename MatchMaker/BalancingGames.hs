@@ -3,7 +3,7 @@ module BalancingGames where
   import Data.List
 
   {-
-   Implement a function that creates games of 2 to 6 players.
+   Implement a function that creates games of max 6 players.
    The games should be as balanced as possible, meaning that the deviation of the skill levels per group should be as low as possible.
 
    Game is a type alias for [Player]
@@ -20,7 +20,8 @@ module BalancingGames where
    you might want to create additional functions. See ElectHosts for inspiration.
    -}
   balancedGames :: [Player] -> [Game]
-  balancedGames players = error "not implemented"
+  balancedGames [] = [] 
+  balancedGames players = [players] -- todo replace this mock implementation with a real one.
 
   {- Write a function that given a list of games, calculates the average skill level per game.
    
@@ -30,4 +31,4 @@ module BalancingGames where
    look into sum and div.
    -}
   averageSkillLevels :: [Game] -> [Int]
-  averageSkillLevels players = error "not implemented"
+  averageSkillLevels games = error "Not implemented" -- Todo implement
