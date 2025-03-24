@@ -51,7 +51,7 @@ build-type:         Simple
 -- extra-source-files:
 
 common warnings
-    ghc-options: -Wall
+    ghc-options: -Wall -Wno-orphans -Wno-unused-top-binds -Wno-unused-matches -Wno-unused-imports
 
 executable Dojo
     -- Import common warning flags.
