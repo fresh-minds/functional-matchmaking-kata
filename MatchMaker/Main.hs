@@ -2,7 +2,7 @@ import ElectHosts
 import Players
 import BalancingGames
 import Tests
-import Test.QuickCheck
+import Test.Hspec
 import Text.Pretty.Simple 
 import Control.Monad.IO.Class
 
@@ -26,14 +26,6 @@ printGameInformation (index, game) = do
 
 main :: IO ()
 main = createDeathMatch
-
-test :: IO ()
-test = do
-  -- See Tests.hs
-  quickCheck prop_first_host_should_have_lowest_latency
-  quickCheck prop_games_should_have_max_6_players
-  quickCheck prop_games_should_have_min_2_players
-
 
 prettyPrint  :: (MonadIO m, Show a) => a -> m ()
 prettyPrint = pPrintOpt CheckColorTty defaultOutputOptionsLightBg {outputOptionsCompact = True, outputOptionsCompactParens = True}

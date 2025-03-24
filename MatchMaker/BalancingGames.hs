@@ -3,8 +3,9 @@ module BalancingGames where
   import Data.List
 
   {-
-   Implement a function that creates games of max 6 players.
+   Implement a function that creates games min 2 and max 6 players.
    The games should be as balanced as possible, meaning that the deviation of the skill levels per group should be as low as possible.
+   When number of total players is < 2, no Games can be created.
 
    Game is a type alias for [Player]
 
@@ -17,11 +18,12 @@ module BalancingGames where
 
    You should look into the functions take and drop
    
-   you might want to create additional functions. See ElectHosts for inspiration.
+   You might want to create additional functions. For example for sorting by skill level and for chunking lists.
    -}
   balancedGames :: [Player] -> [Game]
-  balancedGames [] = [] -- This is pattern matching on an empty list argument
-  balancedGames players = chunk (sortBy highestSkillLevel players) 6
+  balancedGames players | size >= 2 = chunk (sortBy highestSkillLevel players) 6
+                        | otherwise = []
+    where size = length players
 
   chunk :: [Player] -> Int -> [Game]
   chunk [] _ = []
