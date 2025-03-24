@@ -16,7 +16,7 @@ module BalancingGames where
     tail (x:xs) = xs
    This is especially powerful in combination with recursive functions 
 
-   You should look into the functions take and drop
+   You should look into the functions take and drop. You might also want to use mod.
    
    You might want to create additional functions. For example for sorting by skill level and for chunking lists.
    -}

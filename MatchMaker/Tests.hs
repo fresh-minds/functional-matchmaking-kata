@@ -28,7 +28,7 @@ module Tests(test) where
           case electHost players of
             players -> all (\p -> canHost p) players
 
-    describe "Story 2 - Balancing games" $ do
+    describe "Story 2 - Game sizes" $ do
       it "A game should have max 6 players" $ property $ 
         \players ->
           case balancedGames players of
@@ -42,6 +42,21 @@ module Tests(test) where
           case balancedGames players of
             [] -> True
             games -> sort (concat games) == (sort players)
+
+    describe "Story 3 - Friends play together" $ do
+      it "Friends should be in the same game" $ property $
+        \allPlayers ->
+          case balancedGames allPlayers of
+            [] -> True
+            games -> all (\game -> not (gameContainsFriends game) || friendsAreInSameGame game) games
+              where 
+                gameContainsFriends (player:otherPlayers) = hasFriend player || gameContainsFriends otherPlayers
+                gameContainsFriends [] = False
+                hasFriend player = containsFriend player allPlayers
+                friendsAreInSameGame (player:otherPlayers) = containsFriend player otherPlayers || friendsAreInSameGame otherPlayers
+                friendsAreInSameGame [] = False
+                containsFriend (Player _ _ _ partPlayerId _) players = length ( filter (\p -> inPartOfPlayer p == partPlayerId) players ) > 0
+
       
 
 

@@ -113,20 +113,22 @@ The tests are just meant as some extra tooling, understanding or using QuickChec
       Hosts should be as low-latency as possible.
       Only hosts with canHost = true should be selected.
 
-### Story 2 - Balancing games
+### Story 2 - Game sizes
 
     As a server
-    When I have a pool of players waiting for a free for all deathmatch
-    Then players in the game should be of roughly the same skill level
+    When I form free for all deathmatches
+    Then the games should have the proper number of players.
 
     Accept:
-      Minimise the standard deviation of skill between players
       Games should be between 2 and 6 players.
       When the total amount of players <2, no games should be created
 
 ### Story 3 - Friends play together
 
     As a server
-    When I form teams
-    Then players who are partied together should be in the same Game
+    When I form free for all deathmatches
+    Then players who are partied together should be in the same game
+
+    Accept:
+       Players with inPartOfPlayer set with the ID of another player, should be in the game with that player 
 
