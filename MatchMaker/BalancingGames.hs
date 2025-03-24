@@ -39,18 +39,3 @@ module BalancingGames where
     | skillLevel1 > skillLevel2 = GT
     | skillLevel1 < skillLevel2 = LT
     | otherwise = EQ
-
-  {- Write a function that given a list of games, calculates the average skill level per game.
-   
-   This function is just an extra exercise, it should be required for implementing balancedGames.
-
-   Tips:
-   look into sum and div.
-   -}
-  averageSkillLevels :: [Game] -> [Int]
-  averageSkillLevels [] = []
-  averageSkillLevels (x:xs) = div (sum $ getSkillLevels x) (length x) : averageSkillLevels xs
-
-  getSkillLevels :: [Player] -> [Int]
-  getSkillLevels (x:xs) = skill x : getSkillLevels xs
-  getSkillLevels [] = []
