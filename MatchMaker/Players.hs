@@ -7,8 +7,8 @@ module Players where
 
   type Game = [Player]
 
-  players :: [Player]
-  players = [ Player i (latencies !! i) (skills !! i) (inParts !! i) (canHosts !! i) | i <- [0..29] ]
+  defaultPlayers :: [Player]
+  defaultPlayers = [ Player i (latencies !! i) (skills !! i) (inParts !! i) (canHosts !! i) | i <- [0..29] ]
     where
       latencies = cycle [50, 100, 150, 200, 75, 125]
       skills = cycle [20, 40, 60, 80, 100, 10]
