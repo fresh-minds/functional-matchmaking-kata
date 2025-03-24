@@ -10,10 +10,14 @@ module ElectHosts where
     | otherwise = EQ
     
   {-- 
-  Implement the function that elects a player as host based on their latency.
+  Implement a function that returns a player who can host.
+  Start with selecting the player with the lowest latency.
   Tip: use the take and sortBy functions.
+  
+  Then add logic to filter out players who have canHost = False.
+  Tip: Use filter and read https://wiki.haskell.org/Anonymous_function 
   --}
   electHost :: [Player] -> [Player]
   electHost [] = [] -- This is type matching on the empty list
-  electHost players = take 1 $ sortBy lowestLatency players
+  electHost players = players -- todo replace this mock implementation with a real one.
 

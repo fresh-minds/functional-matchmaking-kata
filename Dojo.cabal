@@ -51,7 +51,7 @@ build-type:         Simple
 -- extra-source-files:
 
 common warnings
-    ghc-options: -Wall -Wno-orphans -Wno-unused-top-binds -Wno-unused-matches -Wno-unused-imports
+    ghc-options: -Wall -Wno-orphans -Wno-unused-top-binds -Wno-unused-matches -Wno-unused-imports -Wno-name-shadowing
 
 executable Dojo
     -- Import common warning flags.
@@ -67,7 +67,7 @@ executable Dojo
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.20.0.0, random, QuickCheck, pretty-simple
+    build-depends:    base ^>=4.20.0.0, random, QuickCheck, pretty-simple, hspec
 
     -- Directories containing source files.
     hs-source-dirs:   MatchMaker

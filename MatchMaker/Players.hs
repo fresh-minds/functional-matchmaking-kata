@@ -1,7 +1,7 @@
 module Players where
 
   data Player = Player {playerId :: Int, latency :: Int, skill :: Int, inPartOfPlayer :: Int, canHost :: Bool }
-    deriving(Show)
+    deriving(Show, Eq, Ord)
 
   type ElectedPlayer = Maybe Player
 
