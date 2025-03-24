@@ -26,7 +26,7 @@ ghcup set ghc 9.10.1
 To run the whole project use
 2. Open the program in the interactive ghc shell using: (from the root dir of the repo)
 ```
-cabal repl MatchMaker.hs
+cabal repl
 ```
 3. Run the program using
 ```
@@ -97,8 +97,8 @@ However, as `electHosts` and `balancedGames` are currently just mock implementat
 All players are in the same game and everybody is selected to be host!
 
 #### Tests
-[Tests.hs](MatchMaker/Tests.hs) contains some [QuickCheck](https://hackage.haskell.org/package/QuickCheck-2.15.0.1/docs/Test-QuickCheck.html) tests 
-to verify your code. From the repl you can run `ghci> test` to run these tests. 
+[Tests.hs](MatchMaker/Tests.hs) contains [QuickCheck](https://hackage.haskell.org/package/QuickCheck-2.15.0.1/docs/Test-QuickCheck.html) tests for each of the acceptance criteria per story.
+ . From the repl you can run `ghci> test` to run these tests. 
 The tests are just meant as some extra tooling, understanding or using QuickCheck is not in scope for this Kata (unless you really want to..)
 
 
@@ -109,7 +109,8 @@ The tests are just meant as some extra tooling, understanding or using QuickChec
     Then I should elect the most appropriate hosts for those matches
 
     Accept:
-      Hosts should be as low-latency as possible
+      Hosts should be as low-latency as possible.
+      Only hosts with canHost = true should be selected.
 
 ### Story 2 - Balancing games
 
