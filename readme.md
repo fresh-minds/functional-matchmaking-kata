@@ -32,13 +32,21 @@ ghci> createDeathMatch
 ```
 4. Reload file changes and recompile using
 ```
-:reload
+ghci> :reload
 ```
 
 You can also run individual functions or modules.  
 For example to run electHosts (defined in ElectHosts/ElectHosts.hs) with players (defined in Players.hs)
 ```
 ghci> electHosts players
+```
+
+The repl can also be used to try out Haskell code and functions. For example:
+```
+ghci> letters = ['a', 'b', 'c', 'x']
+ghci> take 2 letters
+ghci> reverse letters
+ghci> reverse $ take 2 letters
 ```
 
 (Optionally) Get Visual Studio Code and download the Haskell Plugin
