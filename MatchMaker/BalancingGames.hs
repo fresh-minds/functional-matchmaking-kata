@@ -27,8 +27,12 @@ module BalancingGames where
 
   chunk :: [Player] -> Int -> [Game]
   chunk [] _ = []
-  chunk players amount = take amount players : chunk (drop amount players) amount
-
+  chunk players amount  | total <= 6 = [players]
+                        | modulo < 2 = take (amount - 1) players : chunk (drop (amount - 1) players) amount
+                        | otherwise = take amount players : chunk (drop amount players) amount
+    where 
+          total = length players
+          modulo = mod (length players) amount
 
   highestSkillLevel :: Player -> Player -> Ordering
   highestSkillLevel (Player _ _ skillLevel1 _ _) (Player _ _ skillLevel2 _ _)
