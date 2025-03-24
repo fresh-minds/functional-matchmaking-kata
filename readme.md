@@ -51,8 +51,6 @@ ghci> reverse letters
 ghci> reverse $ take 2 letters
 ```
 
-(Optionally) Get Visual Studio Code and download the Haskell Plugin
-
 ### Web IDE
 
 I have uploaded to project to [codeboard.io](https://codeboard.io/projects/515449)
@@ -87,10 +85,21 @@ From these factors, emerge *the following requirements*:
 We have a pool of players all looking to play a balanced, 6 player, free-for-all deathmatch.
 
 ### Project setup
-The source files for you to edit can be found in the MatchMaking dir.
+The source code can be found in the MatchMaking dir.
 
-The main code is in [Main.hs](MatchMaker/MatchMaker.hs). [Players.hs](MatchMaker/Players.hs) contains the Player and Game data types and a example list of players to test the application with. 
-For the matchmaking process, [ElectHosts.hs](MatchMaker/ElectHosts.hs) and [BalancingGames.hs](MatchMaker/BalancingGames.hs) is used. For the implementation of the stories below, you should edit these two files. 
+The main code is in [Main.hs](MatchMaker/MatchMaker.hs). [Players.hs](MatchMaker/Players.hs) contains the Player and Game data types and a example list of players to test the application with.
+
+For the matchmaking process, [ElectHosts.hs](MatchMaker/ElectHosts.hs) and [BalancingGames.hs](MatchMaker/BalancingGames.hs) is used. 
+The goal for this kata is to implement the `electHosts` and `balancedGames` functions. You might need to implement some supporting functions too.
+
+You can run the matchmaking process using the Cabal repl. You can already run `ghci> createDeathMatch` to run the code. 
+However, as `electHosts` and `balancedGames` are currently just mock implementations, the generated games will not make much sense.
+All players are in the same game and everybody is selected to be host!
+
+#### Tests
+[Tests.hs](MatchMaker/Tests.hs) contains some [QuickCheck](https://hackage.haskell.org/package/QuickCheck-2.15.0.1/docs/Test-QuickCheck.html) tests 
+to verify your code. From the repl you can run `ghci> test` to run these tests.
+
 
 ### Story 1 - Electing Hosts
 
