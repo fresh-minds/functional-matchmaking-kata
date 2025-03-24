@@ -1,6 +1,13 @@
 # Functional Programming Videogame matchmaking kata
 Partly taken from https://github.com/davidwhitney/CodeDojos
 
+
+## Useful sources
+- https://hoogle.haskell.org/?hoogle For finding Haskell functions 
+- https://www.haskell.org/tutorial/functions.html
+- https://www.haskell.org/tutorial/patterns.html
+- https://hackage.haskell.org/package/CheatSheet-2.7/src/CheatSheet.pdf
+
 ## How to run
 There are a couple of easy ways to start coding in Haskell
 
@@ -21,11 +28,11 @@ cabal repl MatchMaker.hs
 ```
 3. Run the program using
 ```
-ghci> main
+ghci> createDeathMatch
 ```
 4. Reload file changes and recompile using
 ```
-reload
+:reload
 ```
 
 You can also run individual functions or modules.  
@@ -36,11 +43,6 @@ ghci> electHosts players
 
 (Optionally) Get Visual Studio Code and download the Haskell Plugin
 
-## Project setup
-The source files for you to edit can be found in the MatchMaking dir.
-
-The first exercise can be found in ElectHosts.hs, the second part in BalancingGames.hs.
-You should have to edit Main.hs and Player.hs, however, I recommend you to take a look.
 
 ## The Kata
 
@@ -53,21 +55,13 @@ Given a pool of players searching for a game, there are a number of factors to c
 * The **skill** of the player
 * The **latency / ping** of the player
 
-There are a few **common "game types"**, in modern first person shooters
-* **Deathmatch** (*free for all*, no teams)
-* **Team Deathmatch** (*two teams*)
-* **Team objective based games** (*two or more teams*)
-
-With so many permutations and variables, it's no surprise that matchmaking is something that frequently goes wrong, especially during launch periods of games.
-
-Calculating the skill of players is a difficult topic, with some of the most dominant research in the field being the Microsoft Research "TrueSkill" ranking system: http://research.microsoft.com/en-us/projects/trueskill/  For the sake of this kata, we'll **descope "player skill calculations" and presume that we have a single number representing player skill**.
+For this Game we will organize free-for-all deathmatches. Meaning there will be one or more games with maximum 6 players each. There are no teams, every player is on its own.
 
 From these factors, emerge *the following requirements*:
 
 * Each game needs a host
 * Each game should be balanced
-* Players who are partied, should be on the same team
-* Players should be ideally paired with people of the same level of latency
+* Players who are partied, should be in the same Game
 * The game should be balanced
 * The lower the latency of the host, the better
 * Matchmaking should be as quick as possible
@@ -77,6 +71,12 @@ From these factors, emerge *the following requirements*:
 ## Lets build a matchmaker!
 
 We have a pool of players all looking to play a balanced, 6 player, free-for-all deathmatch.
+
+### Project setup
+The source files for you to edit can be found in the MatchMaking dir.
+
+The main code is in [MatchMaker.hs](MatchMaker/MatchMaker.hs). [Players.hs](MatchMaker/Players.hs) contains the Player and Game data types and a example list of players to test the application with. 
+For the matchmaking process, [ElectHosts.hs](MatchMaker/ElectHosts.hs) and [BalancingGames.hs](MatchMaker/BalancingGames.hs) is used. For the implementation of the stories below, you should edit these two files. 
 
 ### Story 1 - Electing Hosts
 
@@ -97,4 +97,9 @@ We have a pool of players all looking to play a balanced, 6 player, free-for-all
       Minimise the standard deviation of skill between players
       It's OK to make smaller, more balanced games if enough hosts are available
 
+### Story 3 - Friends play together
+
+    As a server
+    When I form teams
+    Then players who are partied together should be in the same Game
 
