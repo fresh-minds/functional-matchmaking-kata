@@ -19,11 +19,9 @@ There are a couple of easy ways to start coding in Haskell
 ```
 ghcup install ghc 9.10.1
 ghcup install cabal
+ghcup set ghc 9.10.1
 ```
-From this directory run:
-```
-cabal install
-```
+
 #### Running
 To run the whole project use
 2. Open the program in the interactive ghc shell using: (from the root dir of the repo)
