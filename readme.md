@@ -120,6 +120,7 @@ The tests are just meant as some extra tooling, understanding or using QuickChec
     Accept:
       Minimise the standard deviation of skill between players
       Games should be between 2 and 6 players.
+      When the total amount of players <2, no games should be created
 
 ### Story 3 - Friends play together
 
