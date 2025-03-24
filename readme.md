@@ -26,7 +26,7 @@ cabal install
 ```
 #### Running
 To run the whole project use
-2. Open the program in the interactive ghc shell using
+2. Open the program in the interactive ghc shell using: (from the root dir of the repo)
 ```
 cabal repl MatchMaker.hs
 ```
@@ -40,9 +40,9 @@ ghci> :reload
 ```
 
 You can also run individual functions or modules.  
-For example to run electHosts (defined in ElectHosts/ElectHosts.hs) with players (defined in Players.hs)
+For example to run electHosts (defined in ElectHosts/ElectHosts.hs) with defaultPlayers (defined in Players.hs)
 ```
-ghci> electHosts players
+ghci> electHosts defaultPlayers
 ```
 
 The repl can also be used to try out Haskell code and functions. For example:
