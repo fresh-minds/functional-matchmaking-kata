@@ -28,7 +28,7 @@ module Tests(test) where
           case electHost players of
             players -> all (\p -> canHost p) players
 
-    describe "Story 2 - Balancing games" $ do
+    describe "Story 2 - Game sizes" $ do
       it "A game should have max 6 players" $ property $ 
         \players ->
           case balancedGames players of
