@@ -105,7 +105,7 @@ We have a pool of players all looking to play a balanced, 6 player, free-for-all
 ### Project setup
 The source code can be found in the MatchMaking dir.
 
-The main code is in [Main.hs](MatchMaker/MatchMaker.hs). [Players.hs](MatchMaker/Players.hs) contains the Player and Game data types and a example list of players to test the application with.
+The main code is in [Main.hs](MatchMaker/Main.hs). [Players.hs](MatchMaker/Players.hs) contains the Player and Game data types and a example list of players to test the application with.
 
 For the matchmaking process, [ElectHosts.hs](MatchMaker/ElectHosts.hs) and [BalancingGames.hs](MatchMaker/BalancingGames.hs) is used. 
 The goal for this kata is to implement the `electHosts` and `balancedGames` functions. You might need to implement some supporting functions too.
