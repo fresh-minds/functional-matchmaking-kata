@@ -54,7 +54,7 @@ ghci> test
 ghci> :r
 ```
 
-You can also run individual functions or modules.  
+You can also run individual functions.  
 For example to run electHosts (defined in ElectHosts/ElectHosts.hs) with defaultPlayers (defined in Players.hs)
 ```
 ghci> electHosts defaultPlayers
@@ -70,7 +70,7 @@ ghci> reverse $ take 2 letters
 
 ### Web IDE
 
-I have uploaded to project to [codeboard.io](https://codeboard.io/projects/515449)
+I have uploaded to project to [codeboard.io](https://codeboard.io/projects/515449). However, I really recommend to use a local development setup as this will allow you to use the repl. Pretty printing is also not available online.
 
 
 ## The Kata
@@ -140,7 +140,8 @@ The tests are just meant as some extra tooling, understanding or using QuickChec
       Games should be between 2 and 6 players.
       When the total amount of players <2, no games should be created
 
-### Story 3 - Friends play together
+### Additional requirements
+#### Story 3 - Friends play together
 
     As a server
     When I form free for all deathmatches
@@ -148,4 +149,13 @@ The tests are just meant as some extra tooling, understanding or using QuickChec
 
     Accept:
        Players with inPartOfPlayer set with the ID of another player, should be in the game with that player 
+
+#### Story 4 - Balanced Games
+
+    As a server
+    When I form free for all deathmatches
+    The games should contain players of similar skill levels
+
+    Accept:
+       Games should have the lowest variation possible in player skill levels.
 
