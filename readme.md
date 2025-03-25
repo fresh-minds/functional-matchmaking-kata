@@ -3,6 +3,7 @@ Partly taken from https://github.com/davidwhitney/CodeDojos
 
 
 ## Useful sources
+- [cheatsheet.hs](cheatsheet.hs)
 - https://hoogle.haskell.org/?hoogle=cons&scope=package%3Abase For finding Haskell functions 
 - https://www.haskell.org/tutorial/functions.html
 - https://www.haskell.org/tutorial/patterns.html

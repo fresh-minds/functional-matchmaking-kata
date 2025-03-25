@@ -12,7 +12,10 @@ module ElectHosts where
   {-- 
   Implement a function that returns a player who can host.
   Start with selecting the player with the lowest latency.
-  Tip: use the take and sortBy functions.
+
+  note: This function should return either 1 or 0 players. This is because I want to spare you the extra complexity of using the Maybe Monad...
+
+  Tip: use the lowestLatency, take and sortBy functions.
   
   Then add logic to filter out players who have canHost = False.
   Tip: Use filter and read https://wiki.haskell.org/Anonymous_function 
