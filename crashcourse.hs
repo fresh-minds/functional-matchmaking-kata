@@ -1,4 +1,4 @@
-
+-- This is just documentation and not part of the Kata
 
 aFunction :: Int -> String -> String
 aFunction number word = "Hello " ++ word ++ " " ++ show number 
