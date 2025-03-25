@@ -1,5 +1,5 @@
-module BalancingGames where
-  import Players
+module Root.BalancingGames where
+  import Root.Players
   import Data.List
 
   {-
@@ -22,3 +22,4 @@ module BalancingGames where
    -}
   balancedGames :: [Player] -> [Game]
   balancedGames players = [players] -- todo replace this mock implementation with a real one.
+

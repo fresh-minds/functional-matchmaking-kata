@@ -1,6 +1,6 @@
-module ElectHosts where
+module Root.ElectHosts where
   import Data.List
-  import Players 
+  import Root.Players 
 
   -- This is an example of a function that uses pattern matching
   lowestLatency :: Player -> Player -> Ordering
@@ -20,4 +20,5 @@ module ElectHosts where
   electHost :: [Player] -> [Player]
   electHost [] = [] -- This is type matching on the empty list
   electHost players = players -- todo replace this mock implementation with a real one.
+
 

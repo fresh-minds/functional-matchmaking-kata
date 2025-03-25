@@ -1,4 +1,4 @@
-module Players where
+module Root.Players where
 
   data Player = Player {playerId :: Int, latency :: Int, skill :: Int, inPartOfPlayer :: Int, canHost :: Bool }
     deriving(Show, Eq, Ord)
@@ -14,4 +14,5 @@ module Players where
       skills = cycle [20, 40, 60, 80, 100, 10]
       inParts = cycle [0, 1, 2, 3, 4, 5]
       canHosts = cycle [True, False]
+
 
