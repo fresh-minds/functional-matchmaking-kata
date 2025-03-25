@@ -14,8 +14,17 @@ There are a couple of easy ways to start coding in Haskell
 ### Locally
 
 #### Installing
+It is recommended to run Haskell locally. As this will allow you to use the repl. 
+For running locally, you'll need GHC (compiler) and Cabal (build tool).
+
 1. Get ghcup https://www.haskell.org/ghcup/
-2. Use ghcup to install ghc (the Haskell Compiler) and Cabal (build tool)
+
+When asked on Windows, you should choose to install MSys2 and to install desktop shortcuts.
+The install will ask if you want to install Stack and Hsl. Stack is not needed for this Kata, HSL could be useful if you use a editor that supports it.
+
+On Windows you should use the 'MinGW haskell shell' shortcut on the desktop.
+
+2. Use ghcup to install ghc (the Haskell Compiler) and Cabal (build tool). 
 ```
 ghcup install ghc 9.10.1
 ghcup install cabal
@@ -23,8 +32,12 @@ ghcup set ghc 9.10.1
 ```
 
 #### Running
-To run the whole project use
-2. Open the program in the interactive ghc shell using: (from the root dir of the repo)
+1. Clone this project and go to the root dir.
+```
+git clone https://github.com/fresh-minds/functional-matchmaking-kata/tree/exercises
+cd functional-matchmaking-kata
+```
+2. To open the project in the repl run:
 ```
 cabal repl
 ```
@@ -32,9 +45,14 @@ cabal repl
 ```
 ghci> createDeathMatch
 ```
+or the tests using (they will fail)
+```
+ghci> test
+```
+
 4. Reload file changes and recompile using
 ```
-ghci> :reload
+ghci> :r
 ```
 
 You can also run individual functions or modules.  
