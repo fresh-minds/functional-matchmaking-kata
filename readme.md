@@ -19,10 +19,11 @@ For running locally, you'll need GHC (compiler) and Cabal (build tool).
 
 1. Get ghcup https://www.haskell.org/ghcup/
 
-When asked on Windows, you should choose to install MSys2 and to install desktop shortcuts.
+##### Windows users
+You should choose to install MSys2 and to install desktop shortcuts.
 The install will ask if you want to install Stack and Hsl. Stack is not needed for this Kata, HSL could be useful if you use a editor that supports it.
 
-On Windows you should use the 'MinGW haskell shell' shortcut on the desktop.
+You should use the 'MinGW haskell shell' shortcut on the desktop.
 
 2. Use ghcup to install ghc (the Haskell Compiler) and Cabal (build tool). 
 ```
